@@ -1,0 +1,23 @@
+{% extends './based/base.html' %}
+
+{% block content %}
+
+<div class="profil-maker">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="user-profil">
+            <img src="" alt="">
+        </div>
+        <div class="img-maker">
+            {{ form.profil_image }}
+        </div>
+        <div class="btms">
+            <a href="{% url 'home' %}">
+                <button>plus tard</button>
+                <button type="submit">Appliquer</button>
+            </a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

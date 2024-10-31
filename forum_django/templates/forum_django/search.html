@@ -1,0 +1,30 @@
+{% extends './based/main.html' %}
+
+{% block content %}
+
+<form action="" method="post" class="mt-20">
+    {% csrf_token %}
+    <div class="search">
+        {{ form.search.label }}
+        {{ form.search }}
+    </div>
+    <button type="submit" class="px-8 py-2 rounded-lg bg-blue-500 text-white font-bold">Search</button>
+</form>
+
+<div class="search-container">
+    <div class="search">
+        {% if search_questions %}
+            {% for search in search_questions %}
+                {{ search.user_id.username }}
+                {{ search.title}}
+            {% empty %}
+            <h3>Recherche non effectuer</h3>
+            {% endfor %}
+        {% else %}
+            Aucun resultat
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
