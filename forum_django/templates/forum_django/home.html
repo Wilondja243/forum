@@ -1,0 +1,39 @@
+{% extends './based/main.html' %}
+
+{% block content %}
+
+    <div class="flex justify-center mt-24">
+        <div class="">
+            <h2>Toutes les questions</h2>
+            {% for question in user_questions %}
+                <div class="bg-white shadow-lg rounded flex justify-between h-[200px]">
+                    <img 
+                      src="{{ question.user_id.profilmodel.profil_image.url }}" 
+                      alt="" class="">
+                    <div class="title">
+                        <b>{{ question.title }}</b>
+                        <a href="{% url 'profil' question.user_id.profilmodel.pk %}">
+                            {{ question.user_id.username }}
+                        </a><br>
+                    </div>
+                </div>
+                <div class="description">
+                    <p>{{ question.description }}</p>
+                    <small style="color: blue;">{{ question.content }}</small>
+                    <li>{{ question.question_date }}</li>
+                </div>
+            {% endfor %}
+
+            <a href="{% url 'publish_question' %}">
+                <button>publier une question</button>
+            </a>
+            <div>
+
+            </div>
+            <div>
+                <a href="{% url 'search' %}">search</a>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

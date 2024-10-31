@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'stylesheet/styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="w-full">
+        <nav class="flex justify-between px-5 py-5 shadow-lg bg-white fixed w-full top-0">
+            <h1>FORUM</h1>
+            <ul class="flex">
+                <a href="{% url 'home' %}">
+                    <li class="hover:text-red-500 border-b border-black">home</li>
+                </a>
+                <div class="mx-8">
+                    <a href="{% url 'logout' %}">se deconnecter</a>
+                </div>
+            </ul>
+        </nav>
+        
+        
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends './based/base.html' %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <div class="block-input username-input">
+        {{ form.username }}
+        {% if form.username.errors %}
+        <div class="error-username">
+            {{ form.username.errors }}
+        </div>
+        {% endif %}
+    </div>
+    <div class="block-input email-input">
+        {{ form.email }}
+        {% if form.email.errors %}
+        <div class="error-email">
+            {{ form.email.errors }}
+        </div>
+        {% endif %}
+    </div>
+    <div class="block-input password-input">
+        {{ form.password }}
+        {% if form.password.errors %}
+        <div class="error-password">
+            {{ form.password.errors }}
+        </div>
+        {% endif %}
+    </div>
+    <div class="block-input password2-input">
+        {{ form.password2 }}
+        {% if form.password2.errors %}
+        <div class="error-password2">
+            {{ form.password2.errors }}
+        </div>
+        {% endif %}
+    </div>
+    <div class="btn">
+        <button type="submit">soumettre</button>
+    </div>
+    <div class="line-form">
+        <small>vous avea deja un compte !</small>
+        <a href="{% url 'login' %}">Se connecter.</a>
+    </div>
+</form>
+
+{% endblock %}

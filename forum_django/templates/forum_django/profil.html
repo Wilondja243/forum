@@ -1,0 +1,24 @@
+{% extends './based/main.html' %}
+
+{% block content %}
+
+<div class="profil_container">
+    <div class="my-profil">
+        <form action="" method="post">
+          <img src="" alt="">
+        </form>
+    </div>
+    <h1>mes questions</h1>
+
+    <ul>
+        {% for user_question in user_questions %}
+        <li>{{ user_question.title }}</li>
+        <li>{{ user_question.description }}</li>
+        <li>{{ user_question.content }}</li>
+        <li>{{ user_question.question_date }}</li>
+        <img src="{{ user_question.user_id.profilmodel.profil_image.url}}" alt="">
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

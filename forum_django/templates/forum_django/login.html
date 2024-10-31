@@ -1,0 +1,29 @@
+{% extends './based/base.html' %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <div class="block-input username-input">
+        {{ form.username }}
+        <div class="username-errror">
+            {{ form.username.error}}
+        </div>
+    </div>
+    <div class="block-input password-input">
+        {{ form.password }}
+        <div class="password-error">
+            {{ form.password.error }}
+        </div>
+    </div>
+    <div class="btn">
+        <button type="submit">Soumettre</button>
+    </div>
+    <div class="link_form">
+        <small>Vous n'avez pas un compte !</small>
+        <a href="{% url 'singin' %}">creez-en</a>
+    </div>
+</form>
+
+{% endblock %}
