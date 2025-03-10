@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+}
+
+
+body{
+    background: #eeeeee;
+}
+
+h1,h2{
+    color: #00041a;
+    font-size: clamp(18px, 10vw, 25px);
+}
+h3,h4{
+    color: #00041a;
+    font-size: clamp(16px, 10vw, 20px);
+}
+
+small{
+    color: #00000091;
+}
+
+
+/* #########################
+   NAVBAR STYLE
+########################### */
+
+header{
+    padding: 15px;
+    width: 100%;
+    box-shadow: 0 0 10px #868686ce;
+    background: #ffffff;
+    position:fixed;
+    top: 0;
+    z-index: 50;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+
+/* #########################
+   CONTAINER STYLE
+########################### */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin:5em auto;
+}
+.container .act-content,
+.container .act-content .acts{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1em;
+}
+.container .block-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: center;
+    column-gap: 2em;
+}
+.container .questions{
+    display: block;
+    margin-top: 1.5em;
+}
+.container :is(.block-container .left-content){
+   display: flex;
+   justify-content: lelt;
+   column-gap: 2em;
+   row-gap: 0.5em;
+   padding: 15px;
+   margin-top: 0.2em;
+   background: #ffffff;
+}
+.container :is(.block-container img){
+    width: 80px;
+    border-radius: 50%;
+}
+.container .block-container .content{
+    width: 100%;
+}
+.container .block-container .reactions{
+    display: flex;
+    column-gap: 1.5em;
+    margin-top: 10px;
+}
+.container .block-container .question-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5em;
+}
+.block-container .question-content p{
+    background: #ffff009c;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid #f8f800;
+}
+
+
+/* Others questions */
+
+.right-content{
+    margin-top: 1.5em;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .thumbenail{
+    position: relative;
+}
+.thumbenail::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #00000089;
+}
+
+.search-container{
+    margin-top: 50px;
+} */

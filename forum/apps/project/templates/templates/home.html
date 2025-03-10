@@ -1,0 +1,77 @@
+{% extends './based/main.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="act-content">
+            <h2>Toutes les questions</h2>
+            <div class="acts">
+                <a href="{% url 'publish_question' %}">
+                    <button>publier une question</button>
+                </a>
+                <div>
+                    <a href="{% url 'search' %}">search</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="block-container">
+
+            <div class="questions">
+
+            {% for question in user_questions %}
+            
+                <div class="left-content">
+                    <div>
+                        <a href="{% url 'profil' question.user_id.profilmodel.pk %}">
+                            <img 
+                                src="{{ question.user_id.profilmodel.profil_image.url }}" alt="Profil utilisateur">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="">
+                            <h3>{{ question.title }}</h3>
+                            <div class="reactions">
+                                <div class="answers react">
+                                    <b>0</b>
+                                    Answers
+                                </div>
+                                <div class="votes react">
+                                    <b>0</b>
+                                    Votes
+                                </div>
+                                <div class="vues react">
+                                    <b>0</b>
+                                    Vues
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-content">
+                            <div>
+                                <p>{{ question.content }}</p>
+                            </div>
+                            <small>{{ question.question_date }}</small>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+            </div>
+
+            <div class="right-content">
+                <h3>Autres Questions</h3>
+                {% for question in user_questions %}
+                <div class="other-questions">
+                    <div class="description">
+                        <i>icon</i>
+                        <p style="color:blue">{{ question.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+    
+{% endblock %}
