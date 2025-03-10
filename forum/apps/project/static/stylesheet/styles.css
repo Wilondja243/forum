@@ -11,20 +11,21 @@
 
 
 body{
-    background: #eeeeee;
+    background: #171933;
+    color: rgb(255, 255, 255);
 }
 
 h1,h2{
-    color: #00041a;
+    color: #ffffff;
     font-size: clamp(18px, 10vw, 25px);
 }
 h3,h4{
-    color: #00041a;
+    color: #ffffff;
     font-size: clamp(16px, 10vw, 20px);
 }
 
 small{
-    color: #00000091;
+    color: #ffffff91;
 }
 
 
@@ -35,8 +36,8 @@ small{
 header{
     padding: 15px;
     width: 100%;
-    box-shadow: 0 0 10px #868686ce;
-    background: #ffffff;
+    box-shadow: 0 0 10px #86868600;
+    
     position:fixed;
     top: 0;
     z-index: 50;
@@ -81,15 +82,20 @@ header nav ul{
     display: block;
     margin-top: 1.5em;
 }
-.container :is(.block-container .left-content){
+.container .block-container .left-content{
    display: flex;
    justify-content: lelt;
    column-gap: 2em;
    row-gap: 0.5em;
    padding: 15px;
    margin-top: 0.2em;
-   background: #ffffff;
+   /* background: #22244d; */
 }
+.container .block-container .left-content:hover{
+    background: #22244d4b;
+    box-shadow: 0 10px 20px #0000002a;
+ }
+
 .container :is(.block-container img){
     width: 80px;
     border-radius: 50%;
