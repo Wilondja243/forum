@@ -61,14 +61,13 @@
 
             <div class="right-content">
                 <h3>Autres Questions</h3>
-                {% for question in user_questions %}
                 <div class="other-questions">
-                    <div class="description">
-                        <i>icon</i>
-                        <p style="color:blue">{{ question.description }}</p>
-                    </div>
-                </div>
+                {% for question in user_questions %}
+                    <a href="" class="description">
+                        <p>{{ question.description }}</p>
+                    </a>
                 {% endfor %}
+                </div>
             </div>
             
         </div>

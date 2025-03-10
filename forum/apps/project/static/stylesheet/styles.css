@@ -16,11 +16,11 @@ body{
 }
 
 h1,h2{
-    color: #ffffff;
+    color: #f7f7f7;
     font-size: clamp(18px, 10vw, 25px);
 }
 h3,h4{
-    color: #ffffff;
+    color: #f7f7f7;
     font-size: clamp(16px, 10vw, 20px);
 }
 
@@ -37,10 +37,10 @@ header{
     padding: 15px;
     width: 100%;
     box-shadow: 0 0 10px #86868600;
-    
-    position:fixed;
+    position:sticky;
     top: 0;
     z-index: 50;
+    background: #22244d;
 }
 header nav{
     display: flex;
@@ -64,7 +64,8 @@ header nav ul{
 .container{
     max-width: 1200px;
     width: 90%;
-    margin:5em auto;
+    margin:2em auto;
+    position: relative;
 }
 .container .act-content,
 .container .act-content .acts{
@@ -77,6 +78,7 @@ header nav ul{
     grid-template-columns: 2fr 1fr;
     justify-content: center;
     column-gap: 2em;
+    position:relative;
 }
 .container .questions{
     display: block;
@@ -89,15 +91,15 @@ header nav ul{
    row-gap: 0.5em;
    padding: 15px;
    margin-top: 0.2em;
-   /* background: #22244d; */
+   border-bottom: 1px solid #26284e50;
 }
 .container .block-container .left-content:hover{
-    background: #22244d4b;
-    box-shadow: 0 10px 20px #0000002a;
+    background: linear-gradient(#22244d00,#22244d65);
+    box-shadow: 0 14px 20px #0000001e;
  }
 
 .container :is(.block-container img){
-    width: 80px;
+    width: 60px;
     border-radius: 50%;
 }
 .container .block-container .content{
@@ -112,13 +114,13 @@ header nav ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 .block-container .question-content p{
-    background: #ffff009c;
+    background: #151b36;
     padding: 5px 15px;
     border-radius: 5px;
-    border: 2px solid #f8f800;
+    border: 2px solid #202950;
 }
 
 
@@ -126,9 +128,31 @@ header nav ul{
 
 .right-content{
     margin-top: 1.5em;
-   
+    background: #22244d86;
+    position:sticky;
+    top: 100px;
+    padding: 10px;
+    height: 50%;
+    border-radius: 5px;
+    box-shadow:0 0 20px #121938;
 }
-
+.right-content h3{
+    border-bottom: 1px solid #36406b;
+    padding: 1em 0;
+}
+.right-content .other-questions{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    color: #123eff;
+    margin-top: 1.5em;
+}
+.right-content .other-questions p{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    color: #123eff;
+}
 
 
 
