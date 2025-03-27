@@ -36,6 +36,8 @@ MEDIA_ROOT = BASE_DIR.joinpath('media')
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'forum.apps.project',
+    'forum.apps.chat',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'forum.urls'
-LOGIN_URL = "/accounts/login/"
+LOGIN_URL = "/site/accounts/login/"
 
 TEMPLATES = [
     {
@@ -75,6 +78,18 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'forum.wsgi.application'
+
+ASGI_APPLICATION = 'forum.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND':"channels_redis.core.RedisChannelLayer",
+        'CONFIG':{
+            'hosts':[("127.0.0.1", 6379)],
+        }
+    }
+}
+
 
 
 # Database

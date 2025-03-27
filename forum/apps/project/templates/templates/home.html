@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="act-content">
-            <h2>Toutes les questions</h2>
+            <h2>FORUM</h2>
             <div class="acts">
                 <a href="{% url 'publish_question' %}">
                     <button>publier une question</button>
@@ -33,14 +33,17 @@
                             <h3>{{ question.title }}</h3>
                             <div class="reactions">
                                 <div class="answers react">
+                                    <i class="bi bi-arrow-up-square-fill"></i>
                                     <b>0</b>
                                     Answers
                                 </div>
                                 <div class="votes react">
+                                    <i class="bi bi-hand-thumbs-up-fill"></i>
                                     <b>0</b>
                                     Votes
                                 </div>
                                 <div class="vues react">
+                                    <i class="bi bi-eye-fill"></i>
                                     <b>0</b>
                                     Vues
                                 </div>
@@ -63,9 +66,13 @@
                 <h3>Autres Questions</h3>
                 <div class="other-questions">
                 {% for question in user_questions %}
-                    <a href="" class="description">
-                        <p>{{ question.description }}</p>
-                    </a>
+                    <div>
+                        <i class="bi bi-diamond-fill"></i>
+                        <a href="" class="description">
+                            <p>{{ question.description }}</p>
+                            <small>{{ question.question_date }}</small>
+                        </a>
+                    </div>
                 {% endfor %}
                 </div>
             </div>
